@@ -1,0 +1,533 @@
+----------------------------------------------------------------------------
+
+          Frequent Asked Questions (FAQ) on programming by voice
+
+  Version of 7/8/2016
+  Latest version available at <http://vocola.net/programming-by-voice-FAQ.html>
+  Created by [Mark](mailto:mdl@alum.mit.edu) with help from the voice coders mailing list
+  
+
+
+Contents
+
+    1. Can I program by voice?
+       1.1. Can I program primarily or entirely by voice?
+       1.2. Who programs entirely or mostly by voice?
+       1.3. What if I just want to type and click less?
+       1.4. What if my main language isn't English?
+       1.5. I am a disabled college student who cannot type.  
+       	    Can I become a programmer?
+
+    2. How can programming by voice possibly work?
+       2.1. Isn't it hard to enter code that contains a lot of
+            punctuation like 'input := open("foo.txt");'?
+       2.2. How do programmers enter unpronounceable "words" like
+            strncpy, cosh, or ostreambuf_iterator?
+       2.3. What are some tasks that programming by voice is bad at?
+       2.4. What are some tasks that programming by voice is faster for?
+
+    3. Why is it so hard to get programming by voice working?
+       3.1. How long does it take to start programming by voice?
+       3.2. Why is programming by voice hard to learn / build systems
+       	    for?
+       3.3. Why are there no ready-made systems for programming by voice?
+       3.4. Are some languages/editors/IDEs/domains easier than others?
+
+    4. How can I get started programming by voice?
+       4.1. What's the best speech recognizer for programming by voice?
+       4.2. What's the best hardware for programming by voice?
+       4.3. What's the best software for creating voice commands?
+       4.4. Are there any demos I can watch?
+       4.5. Where can I ask questions?
+       4.6. Are there any other helpful resources?
+
+    5. Disclaimers and licensing
+
+
+----------------------------------------------------------------------------
+
+1. Can I program by voice?
+
+
+1.1. Can I program primarily or entirely by voice?  That is, using
+     speech recognition rather than a keyboard or mouse?
+
+     Yes.  Many people do this including people paralyzed from the neck
+     down.  Larry Allen, of pcspeak.com, estimates that there are 100
+     full-time programmers doing essentially all programming tasks by
+     voice with a further 1,000 to 10,000 programmers doing some
+     programming tasks by voice.
+
+
+1.2. Who programs entirely or mostly by voice?
+
+     Today mostly people with a disability that rules out using a
+     keyboard -- e.g., carpal tunnel, wrist tendinitis, and other forms
+     of repetitive strain injury (RSI) -- and people that have recovered
+     from such disabilities.  Uninjured people are put off by the effort
+     required to get programming by voice working even though it is
+     faster for many tasks.
+
+
+1.3. What if I just want to type and click less?
+
+     Although this FAQ focuses on how to avoid using your hands at all
+     or more than a small amount per day, you can use simplified
+     versions of these techniques to type and click a lot less.
+ 
+     To start, you can dictate emails, documentation, and other English
+     text; browse the web via voice commands; and use voice commands to
+     click the mouse.  Clicking the mouse can also be done by using a
+     foot switch or "auto click", where software automatically clicks
+     the mouse if it remains in one place long enough.
+
+
+1.4. What if my main language isn't English?
+
+     Dragon NaturallySpeaking supports Dutch, French, German, Italian,
+     Spanish, and Japanese whereas traditional and simplified Chinese
+     are supported by Windows Speech Recognition.  If you speak one of
+     these languages, you can dictate to and control your computer in
+     that language.  That said, English is used in most of the relevant
+     forums and third-party documentation, so it helps to understand at
+     least some English.
+
+
+1.5. I am a disabled college student who cannot type.  Can I become a
+     programmer?
+
+     Yes.  Master dictating and the basic built-in voice commands of
+     your speech recognition program, preferably first.  You may need a
+     scribe or other assistance for your initial programming classes.
+     Later, self-paced classes or classes with group projects may be
+     good choices.
+ 
+     If you struggle in your initial classes, you must decide whether
+     you struggle because you cannot use a keyboard or because
+     programming is not for you.  Not everyone is cut out to be a
+     programmer -- being a successful programmer requires an unusual set
+     of talents, and many bright people have failed at programming.
+
+
+----------------------------------------------------------------------------
+
+2. How can programming by voice possibly work?
+
+
+2.1. Isn't it hard to enter code that contains a lot of punctuation like
+     'input := open("foo.txt");'?
+
+     To handle punctuation, programmers can add special vocabulary words
+     (e.g., "colon equals" for ":=", "left paren" for "(" with no
+     preceding space), use code templates, or write editor code that
+     translates more English-like language into actual code.  Even with
+     these methods, it may take somewhat longer to enter code than
+     English.  This isn't a big deal, however, because programmers, in
+     practice, don't spend much time entering new code.
+
+
+2.2. How do programmers enter unpronounceable "words" like strncpy,
+     cosh, or ostreambuf_iterator?
+
+     When these words occur frequently, programmers just create new
+     vocabulary words with English spoken names (e.g., "D fun" for defun
+     and "short square root" for sqrt).  Unfortunately, this method does
+     not work for rare words because no one can remember many rarely
+     used names.  Programmers instead use more complicated methods for
+     these words, which are usually program symbols:
+
+     New unpronounceable symbols are usually either spelled (e.g.,
+     "spell c o s h") or produced by entering then modifying an existing
+     symbol.  Existing symbols can be entered by several methods:
+     Programmers can copy a visible symbol (e.g., insert the first
+     symbol on line 10), or they can repeat a recent symbol by choosing
+     from a numbered list of recently entered symbols.  Alternatively,
+     they can specify an existing symbol by any English words that it
+     abbreviates (e.g., "output stream buffer iterator" for
+     ostreambuf_iterator).  Finally, programmers can use IDE completion
+     by partially spelling out symbols or choosing completions from a
+     list.
+  
+     By comparison, symbols made from pronounceable words like
+     camel-case symbols (e.g., RelayClientDisconnected) are easy to
+     enter.  A simple voice command can join the component English words
+     or editor code can do so after the words are dictated.
+
+
+2.3. What are some tasks that programming by voice is bad at?
+
+     People find selecting or positioning unlabeled, graphical elements
+     -- think creating PowerPoint diagrams or using GUI creators -- by
+     voice alone frustratingly slow.  They find it easy, however, to
+     select elements that have been labeled (e.g., Mouseless Browsing's
+     labeled HTML links).
+  
+     When elements cannot be labeled, people often supplement speech
+     recognition with mouse replacements like head or eye trackers.
+     Touchscreens or pen-based tablets may also work for some people if
+     not used too much per day.
+
+
+2.4. What are some tasks that programming by voice is faster for?
+
+     Most people speak much faster than they can type, so anything
+     involving writing down English (e.g., email, documentation,
+     comments) is going to be faster by voice.  The average typist types
+     40 words per minute (WPM) but could dictate at over 150 WPM with
+     some practice -- almost 4 times faster.
+  
+     Routine tasks can also be faster because you can use more shortcuts
+     with voice.  Voice allows for more usable shortcuts because people
+     remember named shortcuts far better than keystroke combinations.
+     Thousands of voice shortcuts are common.  Many people, for example,
+     make a separate voice shortcut to move to each frequently used
+     directory and source file.
+
+
+----------------------------------------------------------------------------
+
+3. Why is it so hard to get programming by voice working?
+
+
+3.1. How long does it take to start programming by voice?
+
+     Peoples' experience varies, but getting a basic system working
+     seems to take a small number of months.  For example, Tavis Rudd
+     estimates it took him three months to get productive again.  A more
+     complete system can take a year.
+
+
+3.2. Why is programming by voice hard to learn / build systems for?
+
+     First, a specialized language must be created and learned.  Editing
+     text (programming code or otherwise) involves many small operations
+     that need concise descriptions to be efficient.  Consider by
+     analogy how a waitress communicates with a short order cook: she
+     doesn't use "natural language" like "I need two grilled cheese
+     sandwiches, one with fries"; rather, she says something concise
+     like "two cheese one fry".  A sample editing command might be "go
+     14 leap semicolon erase", meaning go to the start of the visible
+     line whose line number's last two digits are 14, move the cursor
+     forward to the next semicolon, then erase 1 character (namely, the
+     semicolon).
+  
+     Second, a large number of varied commands needs to be created.
+     Editing and code dictation commands alone are not enough; commands
+     are also needed for browsing code, manipulating files, using
+     version control, compiling, debugging, reviewing code, emailing,
+     and browsing the web.
+  
+     Third, unless the applications the programmer wants to use are
+     especially keyboard friendly, they will need to be extended to
+     support voice control.  Extending can be done by using a extension
+     language (e.g., elisp), by writing a plug-in, or by modifying the
+     source code.  Extension is often needed so you can easily verbally
+     pick an item out of a list -- the method of "hold down an arrow key
+     until you reach the item you want" is far too slow when done by
+     voice.  Better methods include visually labeling items so the
+     programmer can say the desired item's label and picking items by
+     saying words they contain.  The later method may require extracting
+     the names of the items from the application at runtime if the set
+     of items varies.
+
+
+3.3. Why are there no ready-made systems for programming by voice?
+
+     We believe no company has attempted to build one of these because
+     the market is too small: There are many fewer disabled programmers
+     than lawyers and doctors who could benefit from speech recognition.
+     Moreover, programmers use hundreds, if not thousands, of
+     incompatible languages, editors, and IDEs.  This means any one
+     programming-by-voice system can capture only a fraction of the
+     disabled programmer market.  Even the larger market for helping the
+     disabled in general control their computers by voice attracts
+     little commercial attention.  These market realities are why speech
+     recognition vendors emphasize ease of learning and natural language
+     commands (e.g., "move down 2 lines") rather than ease of use (e.g.,
+     "down 2").
+  
+     Open source, by contrast, is mostly driven by programmers with an
+     itch--in this case, disabled programmers trying to program by
+     voice.  Unfortunately, disabled programmers are usually too busy
+     trying to do their day jobs and get/keep a programming-by-voice
+     system working for themselves to have much time to contribute to
+     open source.  They do not have time to convert a system that only
+     works for them to a portable, reusable system.  Because of these
+     constraints and the fragmentation of programming environments, most
+     of the open source to date has been around tools for building voice
+     commands.
+  
+     An additional complication is that programming-by-voice systems
+     are most effective when they match the cognitive style and naming
+     conventions of their users (e.g., it's harder to remember command
+     names chosen by other people); this further fragments the
+     community's efforts.
+  
+     There is one quasi-exception to no open source system being
+     available, namely VoiceCode.  VoiceCode is an open source system
+     for Emacs that supports many popular programming languages.
+     Unfortunately, it appears to be living-dead software, slowly
+     rotting, and without any maintainers.  As of December 2014, it does
+     not work with the 2012+ versions of the associated speech
+     recognizer.
+
+
+3.4. Are some languages/editors/IDEs/domains easier than others to
+     program by voice with?
+
+     Yes.  For languages, ones like Java and Ruby that by convention use
+     names made out of English words are easier than languages like C++
+     that encourage unpronounceable names.  For editors and IDEs, ease of
+     extensibility makes things easier.  For domains, command-line-only
+     programs are easier to create by voice than GUIs or web applications
+     because graphic elements need not be manipulated.
+  
+     Gnuemacs stands out as especially easy to use for programming by
+     voice: it provides excellent extensibility via elisp as well as
+     packages for manipulating files, using version control, compiling
+     source code, and the like.  Moreover, all of this functionality can
+     be used without a mouse.
+
+
+
+----------------------------------------------------------------------------
+
+4. How can I get started programming by voice?
+
+
+4.1. What's the best speech recognizer for programming by voice?
+
+     There are only two recognizers usable today for serious programming
+     by voice.  Best is Dragon NaturallySpeaking (Dragon) -- recently
+     renamed to Dragon Professional Individual -- by Nuance.  Second
+     best is Windows Speech Recognition (WSR), which is included in
+     Microsoft's recent operating systems.  Although WSR is free unlike
+     Dragon, more than one voice coder has given up on it due to its
+     reduced accuracy, particularly with noise words.
+  
+     Both of these recognizers run under only Windows.  They may,
+     however, be used under Linux or Mac OS by running them in a virtual
+     machine.  They can also be used with Linux or Macs by using a
+     Windows PC as a "smart terminal": the programmer sits at the
+     Windows PC and SSH's into one or more Linux/Mac OS boxes and pops
+     up xterms, Emacs, and the like via X11 on the Windows PC.  These
+     approaches forgo some functionality: Dragon and WSR provide
+     built-in commands for controlling applications written using the
+     standard Windows graphical toolkit and text controls; Dragon also
+     provides natural language commands for Microsoft Office and
+     Internet Explorer.  None of this functionality is available for
+     other operating systems.
+  
+     DragonDictate for the Mac, also made by Nuance, is good for
+     dictation but its command and control functionality is way behind
+     that of Dragon.  Siri and similar programs likewise do well at
+     dictation but poorly at commands.
+
+     Dragon comes in several versions; you want Dragon Professional
+     Individual or the slightly older Dragon NaturallySpeaking premium
+     13.  There doesn't appear to be a compelling reason to choose the
+     more expensive DPI 14 over DNS 13.  The older DNS 12
+     premium/professional actually works better for programming by
+     voice, but is no longer available.
+
+
+4.2. What's the best hardware for programming by voice?
+
+     Although Dragon NaturallySpeaking works okay with most recent PCs,
+     it works best with a fast processor (e.g., Intel core i7, 3+ GHz)
+     and lots of RAM (8 GB or more).  If you will be working in a noisy
+     area, you will want to invest in a high quality noise-canceling
+     microphone -- the microphone that comes with Dragon is mediocre.
+     There are many styles of microphones with different people
+     preferring different styles, so we'll just refer you here to some
+     vendor guides:
+
+     + [KnowBrainer microphone comparison guide][KB]
+     + [Speech Recognition Solutions guide][SR]
+     
+       [KB]: http://www.knowbrainer.com/core/pages/miccompare.cfm?
+       [SR]: http://www.speechrecsolutions.com/microphone_selection_guide.htm
+
+
+4.3. What's the best software for creating voice commands?
+
+     Vocola and/or DragonFly are your best choice.  Both are open source
+     and work with both Dragon and Windows Speech Recognition (WSR).
+  
+     Vocola provides a concise language for writing voice commands; here
+     are four example commands:
+
+          Copy That = {Ctrl+c};
+          Copy to WordPad = {Ctrl+a}{Ctrl+c} AppBringUp(WordPad);
+          1..40 (Left | Right | Up | Down) = {$2_$1};
+          Sort by (Date=e | Sender=n | Subject=s) = {Alt+v}o $1;
+  
+     Vocola supports user-defined functions, optional command parts,
+     arbitrary text parts, multiple commands in a single utterance, and
+     easy-to-write extensions written in Python (Dragon version) or .Net
+     (WSR version).
+  
+     DragonFly, by contrast, is a Python programming framework for
+     creating voice commands.  Dragonfly's commands are less concise
+     than Vocola's but can do pretty much anything possible with the
+     speech recognition engines.  Vocola's standard functionality
+     probably suffices for 95-99% of the voice commands a programmer
+     wants, so we recommend starting with Vocola and only later using
+     DragonFly or custom Vocola extensions for the commands that need
+     more power.
+
+
+4.4. Are there any demos I can watch?
+
+     Here are some demos that you may find inspiring.  The demonstrated
+     systems vary in maturity and effectiveness.  None shows all the
+     most effective known techniques.  For example, Tavis Rudd doesn't
+     demonstrate the use of line numbers and pauses more than necessary.
+     Also, some of the speakers are intentionally speaking slowly to
+     make their demos easier to follow or are using now-decade-old
+     hardware and software, which cannot keep up in real time.
+     
+     + An excellent recent demo given by Tavis Rudd at PyCon, entitled
+       ["Using Python to Code by Voice"][TR].  Tavis says that in
+       practice he uses line numbers heavily and goes much faster, in
+       part by using shortcuts he didn't show for fear of angering the
+       demo gods.
+      
+     + A follow-up demo on [VimSpeak][VS] by Ashley Feniello; note that
+       he does not appear to have speech recognition set up optimally,
+       and thus has a much higher misrecognition rate than expected.
+     
+     + The original [VoiceCode demo][VC] (the audio is missing in the
+       beginning)
+     
+     + Nils Klarlund's demo of his [ShortTalk system][ST], which
+       demonstrates power of stringing together many small editing
+       commands
+     
+     + Jason Veldicott's [demo][JV], which uses approximate string
+	matching for dictating existing symbols
+     
+     + Jonathan Epstein's videos for [Perl][P] and [Java][J], which
+       demonstrate spelling existing symbols and using caching of recent
+       symbols
+       
+       [TR]: https://www.youtube.com/watch?v=8SkdfdXWYaI
+       [VS]: https://www.youtube.com/watch?v=TEBMlXRjhZY
+       [VC]: http://www.youtube.com/watch?v=A7f9Iik3q58
+       [ST]: https://www.youtube.com/watch?v=pXOBKlJ5Oms
+       [JV]: http://www.youtube.com/watch?v=BIJBl5llcQ4
+       [P]:  http://jonathanepstein9.com/vr.org/jepstein/pbvdemos/perl1/perl1animation.zip
+       [J]:  http://jonathanepstein9.com/vr.org/jepstein/pbvdemos/javabyvoicereenactment/annottest1.zip
+
+
+4.5. Where can I ask questions?
+
+     For general speech recognition questions (e.g., "What's a good
+     microphone?" or "How do I select cells in Excel?"), the best
+     current forums are at [KnowBrainer][KB].  The Dragon
+     NaturallySpeaking Speech Recognition [forum][NS] is particularly
+     good.  Similar forums in German can be found [here][G].
+     
+     For programming-specific questions, the voice-coders [mailing
+     list][VC] is probably your best bet.
+     
+      [KB]: https://www.knowbrainer.com/forums/forum/index.cfm  
+      [NS]: https://www.knowbrainer.com/forums/forum/categories.cfm?catid=4
+      [G]:  http://dragon-spracherkennung.forumprofi.de/
+      [VC]: https://groups.yahoo.com/neo/groups/VoiceCoder/info
+
+
+4.6. Are there any other helpful resources for building a programming by
+     voice system?
+
+     Here are some other useful links:
+     
+     + The [Vocola website](http://vocola.net/)
+
+     + The [DragonFly website](https://github.com/t4ngo/dragonfly)
+
+     + James' [blog](http://handsfreecoding.org/) on using DragonFly to
+       program by voice.
+
+     + Mark's [sample editing commands][SE] in Vocola for Win32Pad that
+       demonstrate combining multiple concise commands into a single
+       utterance, using line numbers mod 100, moving by punctuation, and
+       operating on line ranges specified by line number.  Mark uses
+       clever tricks to provide this functionality for an underpowered
+       editor; likely, some variant of these tricks can be used with
+       many programming editors.
+
+     + The [NatLink website][NA], the unofficial extension of Dragon
+       that allows creating voice commands using a kludgy Python
+       interface.  This extension is used by both Vocola and DragonFly
+       to provide smoother ways of creating commands.  A paper,
+       ["Implementation and Acceptance of NatLink, a Python-Based Macro
+       System for Dragon NaturallySpeaking"][PA], and a PowerPoint,
+       ["NatLink: A Python Macro System for Dragon
+       NaturallySpeaking"][PP], are available.
+
+     + [Unimacro][UN], a collection of NatLink grammars by the current
+	maintainer of NatLink
+
+     + The [VoiceCode project][VC] website such as it is and the
+       academic paper, ["VoiceCode: an Innovative Speech Interface for
+       Programming-by-Voice"][VP], describing the VoiceCode system
+
+     + The [Mouseless Browsing][MB] extension for Firefox, which labels
+       HTML links with numbers and allows them to be selected by typing
+       those numbers; this allows links to be [chosen by voice][MM].
+       The new [Click by Voice][CV] extension provides equivalent
+       functionality for Chrome.
+
+     + [Freesr Speech Recognition][FS] and [SpeechStart+][SS],
+       third-party utilities that among other things label widgets,
+       windows, and taskbar items and icons for manipulation by provided
+       voice commands.  SpeechStart+ also allows restarting Dragon
+       NaturallySpeaking by voice when it gets stuck, which is handy for
+       completely hands-free users.
+
+     + [NaturalPoint's SmartNav 4][SN], a reliable and accurate,
+       hands-free mouse alternative that allows complete control of a
+       computer by naturally moving the head.
+
+     + [AutoHotkey][AN], a free, open-source keyboard-macro-creation and
+       automation program.  The AutoHotkey community is a useful source
+       of expertise on automating Windows applications; AutoHotkey
+       macros can be invoked from voice macros using `SendSystemKeys` or
+       `SendInput`.
+
+      [SE]: http://vocola.net/unofficial/commands_for_Win32Pad.html
+      [NA]: http://sourceforge.net/projects/natlink/
+      [PA]: http://qh.antenna.nl/unimacro/implementation_and_acceptance_of_natlink.pdf
+      [PP]: http://www.synapseadaptive.com/joel/natlinktalk.ppt>
+      [UN]: http://qh.antenna.nl/unimacro/
+      [VC]: http://sourceforge.net/projects/voicecode/
+      [VP]: http://alpacatechnologies.com/tiki-download_file.php?fileId=21
+      [MB]: https://addons.mozilla.org/en-us/firefox/addon/mouseless-browsing/
+      [CV]: https://chrome.google.com/webstore/detail/click-by-voice/dleiijbbjajmfcaiiiadgjpgfjmfdfen
+      [MM]: https://www.knowbrainer.com/forums/forum/messageview.cfm?catid=25&threadid=20139
+      [FS]: http://freesr.org/
+      [SS]: http://www.pcbyvoice.com/shop/pcbyvoice-speechstart-plus/
+      [SN]: http://www.naturalpoint.com/smartnav/
+      [AN]: http://ahkscript.org/
+
+
+----------------------------------------------------------------------------
+
+5. Disclaimers and licensing
+
+     All contributors' employers will no doubt disown any statements
+     herein.  We are not speaking for anyone but ourselves.
+
+     Every effort has been made to produce an accurate and useful
+     document, but the information herein is completely without
+     warranty.  If you find any errors or otherwise wish to contribute,
+     please contact [Mark](mailto:mdl@alum.mit.edu).
+
+     This document may be freely distributed as long as it is not
+     modified.  An [ASCII version][ASCII] is also available.
+
+      [ASCII]: http://vocola.net/programming-by-voice-FAQ.txt
+
+
+----------------------------------------------------------------------------

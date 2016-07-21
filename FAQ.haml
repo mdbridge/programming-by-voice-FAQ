@@ -1,0 +1,105 @@
+- text = File.read("FAQ.txt")
+- text.gsub!(/^----.*/, "")
+- text.gsub!(/--/, "&mdash;")
+
+- meta, _, rest = text.partition(/contents/i)
+- meta = meta.scan(/[a-zA-Z].*[^\s]/)
+- @title      = meta[0]
+- @version    = meta[1]
+- @location   = meta[2]
+- @authorship = meta[3]
+
+- contents, _, rest = rest.partition(/^(?=\d)/i)
+- entries  = contents.scan(/\d.* (?: \n \s*[^\s\d].* )*/x)
+- entries  = entries.collect { |x| x.partition(/\s+/) }
+- @entries = entries.collect { |n,_,t| [n, t.gsub(/\s+/, " ")] }
+
+- questions  = rest.scan(/^\d.* (?: \n (?!\d).* )*/x)
+- @questions = questions.collect do |text|
+  - fail unless text =~ /\A ([0-9.]+) \s+ (.*?) ^\s*$ (.*) \z/xm
+  - [$1, $2, $3.gsub(/^     /,"")]
+
+
+!!!
+
+%html(lang="en-US")
+  %head 
+    %meta{charset: "UTF-8"}
+    %meta{name: "viewport", content: "width=device-width"}
+    %title= @title
+    - #%meta{name: "description", content: "Questions include can I program by voice?  How does programming by voice work?  Why is it hard to do?  How can I get started?"}
+    - # html5shiv for HTML 5 IE 8 support:
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    :css
+      body    { font-family: Helvetica, Arial, sans-serif; }
+      p, li   { line-height: 1.4em; }
+      a       { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      h2, h3  { padding-top: 0.7em; }
+
+      body { max-width: 1000px; margin: 0 auto 0 auto; padding: 0.5em; }
+      
+      @media (max-width: 600px) {
+        .contents ul    { margin-left: 0; padding-left: 0; }
+      }
+      .contents li      { list-style-type: none; position: relative; }
+      .contents .l2     { margin-left: 1.5em; }
+      .contents .l1     { padding-left: 1.3em; }
+      .contents .l2     { padding-left: 2.0em; }
+      .contents .number { position: absolute; left: 0; }
+
+      .main { max-width: 720px; }
+      /* 720px = 45em for normal size (16px) fonts */
+
+      @media (min-width: 601px) {
+        .meta                { padding-left: 1.5em; }
+
+        .main .l1, .main .l2 { position: relative; }
+        .main .number        { position: absolute; left: 0; }
+        .main .l1            { padding-left: 1.4em; }
+        .main .l2            { padding-left: 2.5em; }
+      }
+
+      code { font-family: "Courier New", Courier, monospace; }
+      /* Format code blocks from markdown below element with this class;
+         (don't use pre otherwise below it) */
+      .contains_code pre { 
+          overflow: auto;
+          padding: .5em;
+          border: 1px solid transparent;
+          background: #ffc; border: 1px solid #fda;
+      }
+      
+
+
+  %body
+    %h1= @title
+    .meta
+      :markdown
+        #{@version}
+        <br>
+        #{@location}
+        <br>
+        #{@authorship}
+
+
+    %nav.contents
+      %h2 Contents
+      %ul
+        - @entries.each do |section, description|
+          %li{class: "l" + section.scan(/\./).size.to_s}
+            %span.number= section
+            %a{href: "\#section#{section}"}= description
+
+
+    .main.contains_code
+      %h2 Questions and answers
+      - @questions.each do |section, question, answer|
+        %section{class: "l"+section.scan(/\./).size.to_s, id: "section#{section}"}
+          %h3
+            %span.number= section
+            = question
+          :markdown
+            #{answer}
