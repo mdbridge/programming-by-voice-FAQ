@@ -2,7 +2,7 @@
 
           Frequent Asked Questions (FAQ) on programming by voice
 
-  Version of 7/8/2016
+  Version of 7/1/2017
   Latest version available at <http://vocola.net/programming-by-voice-FAQ.html>
   Created by [Mark](mailto:mdl@alum.mit.edu) with help from the voice coders mailing list
   
@@ -267,9 +267,8 @@ Contents
      available, namely VoiceCode.  VoiceCode is an open source system
      for Emacs that supports many popular programming languages.
      Unfortunately, it appears to be living-dead software, slowly
-     rotting, and without any maintainers.  As of December 2014, it does
-     not work with the 2012+ versions of the associated speech
-     recognizer.
+     rotting, and without any maintainers.  As of July 2017, it does not
+     work with the 2012+ versions of the associated speech recognizer.
 
 
 3.4. Are some languages/editors/IDEs/domains easier than others to
@@ -324,9 +323,12 @@ Contents
      dictation but poorly at commands.
 
      Dragon comes in several versions; you want Dragon Professional
-     Individual or the slightly older Dragon NaturallySpeaking premium
-     13.  There doesn't appear to be a compelling reason to choose the
-     more expensive DPI 14 over DNS 13.  The older DNS 12
+     Individual 14 or the slightly older Dragon NaturallySpeaking
+     premium 13.  The most recent version, DPI 15, should be avoided as
+     it has a bug that makes it unusable with many of the best
+     programming-by-voice tools (including NatLink, Vocola, and
+     DragonFly).  There doesn't appear to be a compelling reason to
+     choose the more expensive DPI 14 over DNS 13.  The older DNS 12
      premium/professional actually works better for programming by
      voice, but is no longer available.
 
@@ -337,10 +339,9 @@ Contents
      it works best with a fast processor (e.g., Intel core i7, 3+ GHz)
      and lots of RAM (8 GB or more).  If you will be working in a noisy
      area, you will want to invest in a high quality noise-canceling
-     microphone -- the microphone that comes with Dragon is mediocre.
-     There are many styles of microphones with different people
-     preferring different styles, so we'll just refer you here to some
-     vendor guides:
+     microphone.  There are many styles of microphones with different
+     people preferring different styles, so we'll just refer you here to
+     some vendor guides:
 
      + [KnowBrainer microphone comparison guide][KB]
      + [Speech Recognition Solutions guide][SR]
@@ -387,7 +388,7 @@ Contents
      make their demos easier to follow or are using now-decade-old
      hardware and software, which cannot keep up in real time.
      
-     + An excellent recent demo given by Tavis Rudd at PyCon, entitled
+     + An excellent 2013 demo given by Tavis Rudd at PyCon, entitled
        ["Using Python to Code by Voice"][TR].  Tavis says that in
        practice he uses line numbers heavily and goes much faster, in
        part by using shortcuts he didn't show for fear of angering the
@@ -407,17 +408,11 @@ Contents
      + Jason Veldicott's [demo][JV], which uses approximate string
 	matching for dictating existing symbols
      
-     + Jonathan Epstein's videos for [Perl][P] and [Java][J], which
-       demonstrate spelling existing symbols and using caching of recent
-       symbols
-       
        [TR]: https://www.youtube.com/watch?v=8SkdfdXWYaI
        [VS]: https://www.youtube.com/watch?v=TEBMlXRjhZY
        [VC]: http://www.youtube.com/watch?v=A7f9Iik3q58
        [ST]: https://www.youtube.com/watch?v=pXOBKlJ5Oms
        [JV]: http://www.youtube.com/watch?v=BIJBl5llcQ4
-       [P]:  http://jonathanepstein9.com/vr.org/jepstein/pbvdemos/perl1/perl1animation.zip
-       [J]:  http://jonathanepstein9.com/vr.org/jepstein/pbvdemos/javabyvoicereenactment/annottest1.zip
 
 
 4.5. Where can I ask questions?
@@ -447,7 +442,8 @@ Contents
      + The [DragonFly website](https://github.com/t4ngo/dragonfly)
 
      + James' [blog](http://handsfreecoding.org/) on using DragonFly to
-       program by voice.
+       program by voice.  David Conway's [series of articles][ED]
+       introducing voice programming is also good.
 
      + Mark's [sample editing commands][SE] in Vocola for Win32Pad that
        demonstrate combining multiple concise commands into a single
@@ -496,13 +492,14 @@ Contents
        macros can be invoked from voice macros using `SendSystemKeys` or
        `SendInput`.
 
+      [ED]: http://explosionduck.com/wp/introduction-to-voice-programming-part-one-dns-natlink/
       [SE]: http://vocola.net/unofficial/commands_for_Win32Pad.html
       [NA]: http://sourceforge.net/projects/natlink/
-      [PA]: http://qh.antenna.nl/unimacro/implementation_and_acceptance_of_natlink.pdf
+      [PA]: http://qh.antenna.nl/unimacro/implementationandacceptanceofnatlink.pdf
       [PP]: http://www.synapseadaptive.com/joel/natlinktalk.ppt>
       [UN]: http://qh.antenna.nl/unimacro/
       [VC]: http://sourceforge.net/projects/voicecode/
-      [VP]: http://alpacatechnologies.com/tiki-download_file.php?fileId=21
+      [VP]: https://dl.acm.org/citation.cfm?id=1125502
       [MB]: https://addons.mozilla.org/en-us/firefox/addon/mouseless-browsing/
       [CV]: https://chrome.google.com/webstore/detail/click-by-voice/dleiijbbjajmfcaiiiadgjpgfjmfdfen
       [MM]: https://www.knowbrainer.com/forums/forum/messageview.cfm?catid=25&threadid=20139
