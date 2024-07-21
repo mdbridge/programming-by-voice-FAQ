@@ -2,8 +2,11 @@ default: programming-by-voice-FAQ.html upload
 
 
 upload: 
-	ftp -n -i home193469624.1and1-data.host < FTP-commands.txt
-
+	(cd ~/voice/Vocola_development/Vocola_net; git pull)
+	cp programming-by-voice-FAQ.html ~/voice/Vocola_development/Vocola_net/src/
+	cp programming-by-voice-FAQ.txt  ~/voice/Vocola_development/Vocola_net/src/
+	(cd ~/voice/Vocola_development/Vocola_net; git diff)
+	#(cd ~/voice/Vocola_development/Vocola_net; git push)
 
 programming-by-voice-FAQ.html: FAQ.haml FAQ.txt
 	cp FAQ.txt programming-by-voice-FAQ.txt
